@@ -1,0 +1,29 @@
+{
+  "name": "Test",
+  "version": "0.0.1",
+  "description": "Test",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Ali"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.6.5",
+    "mongoose": "^5.8.6",
+    "nodemon": "^2.0.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "ts-node": "^8.5.4"
+  },
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "start": "tsc && node src/index.js"
+  }
+}
