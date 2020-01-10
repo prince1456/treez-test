@@ -7,9 +7,8 @@ export interface IProduct extends Document {
     name: string;
     description: string;
     quantity: number;
-    total_price: number;
     price: number;
-    created_date: Date;
+    created_date?: Date ;
   }
 
 export const productSchema = new Schema({
@@ -59,7 +58,7 @@ class Inventories {
     public getProductWithID (req: Request, res: Response) {    
         productModal.findById(req.params.productId, (err, product) => {
             if(err){
-                res.send(err);
+                res.send({message: "product is not exist"});
             }
             res.json(product);
         });

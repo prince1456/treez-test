@@ -1,28 +1,26 @@
 {
-    "name": "Test",
-    "version": "0.0.1",
-    "description": "Test",
-    "license": "MIT",
-    "readmeFilename": "README.md",
-    "author": {
-      "name": "Ali"
-    },
-    "devDependencies": {
-      "@types/body-parser": "^1.16.8",
-      "@types/express": "^4.11.1",
-      "@types/node": "^9.6.5",
-      "typescript": "^3.3.3333"
-    },
-    "dependencies": {
-      "body-parser": "^1.18.2",
-      "express": "^4.16.3"
-    },
-    "main": "dist/index.js",
-  "scripts": {
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "files": [
+    "src/index.ts"
+  ],
+  "include": [
+    "server/**/*.ts"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "target": "es6",
+    "outDir": "dist",
+    "rootDir": "server",
+    "sourceMap": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "typeRoots": [ "node_modules/@types" ],
+    "paths": {
+      "*": [
+        "node_modules/@types/*",
+        "./server/types/*"
+      ]
     }
   }
+}

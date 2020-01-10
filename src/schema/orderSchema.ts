@@ -4,16 +4,16 @@ import { productModal } from './inventorySchema';
 
 const Schema = mongoose.Schema;
 
-interface ICart {
+export interface ICart {
     productId: string,
     quantity: number,
 }
 
-export interface IOrder extends Document {
+export interface IOrder {
     customer_email: string;
     carts: ICart[];
-    total_price: number;
-    date_order: Date;
+    total_price?: number;
+    date_order?: Date;
     order_status: string;
 }
 export const orderSchema = new Schema({
